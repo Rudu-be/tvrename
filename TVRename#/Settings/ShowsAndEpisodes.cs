@@ -454,7 +454,8 @@ namespace TVRename
             this.PadSeasonToTwoDigits = false;
             this.AutoAdd_FolderBase = "";
             this.AutoAdd_FolderPerSeason = true;
-            this.AutoAdd_SeasonFolderName = "Season ";
+            //this.AutoAdd_SeasonFolderName = "Season ";
+            this.AutoAdd_SeasonFolderName = "S";
             this.DoRename = true;
             this.DoMissingCheck = true;
             this.CountSpecials = false;

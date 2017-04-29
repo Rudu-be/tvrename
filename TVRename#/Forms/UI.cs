@@ -773,7 +773,8 @@ namespace TVRename
                 else
                     eis = ShowItem.ProcessedListFromEpisodes(s.Episodes, si);
 
-                string seasText = snum == 0 ? "Specials" : ("Season " + snum);
+                //string seasText = snum == 0 ? "Specials" : ("Season " + snum);
+                string seasText = snum == 0 ? "Specials" : ("S" + snum);
                 if ((eis.Count > 0) && (eis[0].SeasonID > 0))
                     seasText = " - <A HREF=\"" + db.WebsiteURL(si.TVDBCode, eis[0].SeasonID, false) + "\">" + seasText + "</a>";
                 else
@@ -1421,7 +1422,8 @@ namespace TVRename
 
             if (seas != null && mLastShowsClicked != null && mLastShowsClicked.Count == 1)
             {
-                tsi = new ToolStripMenuItem("Edit " + (seas.SeasonNumber == 0 ? "Specials" : "Season " + seas.SeasonNumber));
+                //tsi = new ToolStripMenuItem("Edit " + (seas.SeasonNumber == 0 ? "Specials" : "Season " + seas.SeasonNumber));
+                tsi = new ToolStripMenuItem("Edit " + (seas.SeasonNumber == 0 ? "Specials" : "S" + seas.SeasonNumber));
                 tsi.Tag = (int)RightClickCommands.kEditSeason;
                 this.showRightClickMenu.Items.Add(tsi);
             }
@@ -2128,7 +2130,8 @@ namespace TVRename
 
                 foreach (int snum in theKeys)
                 {
-                    string nodeTitle = snum == 0 ? "Specials" : "Season " + snum;
+                    //string nodeTitle = snum == 0 ? "Specials" : "Season " + snum;
+                    string nodeTitle = snum == 0 ? "Specials" : "S" + snum;
                     TreeNode n2 = new TreeNode(nodeTitle);
                     if (si.IgnoreSeasons.Contains(snum))
                         n2.ForeColor = Color.Gray;
